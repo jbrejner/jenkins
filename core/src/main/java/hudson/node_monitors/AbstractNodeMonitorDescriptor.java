@@ -57,6 +57,10 @@ public abstract class AbstractNodeMonitorDescriptor<T> extends Descriptor<NodeMo
      *      Extend from {@link AbstractAsyncNodeMonitorDescriptor}
      */
     protected AbstractNodeMonitorDescriptor() {
+        /**
+         * I think this is defining how often Node statistics are updated
+         */
+
         this(HOUR);
     }
 
@@ -87,6 +91,9 @@ public abstract class AbstractNodeMonitorDescriptor<T> extends Descriptor<NodeMo
     }
 
     private void schedule(long interval) {
+        /**
+         * Or here....
+         */
         Timer.get()
             .scheduleAtFixedRate(new SafeTimerTask() {
                 public void doRun() {
